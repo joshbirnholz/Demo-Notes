@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Notes-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Notes" alwaysBounce="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Notes" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="aYH-kl-02j">
+                            <items>
+                                <tableRow identifier="NoteRow" id="n2c-w2-Dxf" customClass="NoteRowController" customModule="Notes_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="onD-67-F2Y">
+                                        <items>
+                                            <label alignment="left" text="Title" numberOfLines="2" id="4Xe-Mo-PqT">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                            <label alignment="left" text="Date" id="J53-EQ-10C">
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                        </items>
+                                        <connections>
+                                            <segue destination="tci-b7-j6P" kind="push" identifier="NoteDetail" id="aIc-Ps-tU2"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateLabel" destination="J53-EQ-10C" id="fXa-Eb-B9Q"/>
+                                        <outlet property="titleLabel" destination="4Xe-Mo-PqT" id="4XP-X2-1If"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="notesTable" destination="aYH-kl-02j" id="PSe-tW-6Jp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="147" y="133"/>
+        </scene>
+        <!--Note-->
+        <scene sceneID="pHM-x3-KP6">
+            <objects>
+                <controller title="Note" id="tci-b7-j6P" customClass="NoteInterfaceController" customModule="Notes_Extension">
+                    <items>
+                        <label alignment="left" text="Lorem ipsum" numberOfLines="0" id="2AO-M8-gWO"/>
+                    </items>
+                    <connections>
+                        <outlet property="noteLabel" destination="2AO-M8-gWO" id="5WW-Uu-Blp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="435" y="133"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="1" green="0.78787416221304896" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
